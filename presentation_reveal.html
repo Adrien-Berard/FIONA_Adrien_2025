@@ -454,9 +454,23 @@
         </section>
         <section>
           <h2>p53 GFP Recruitment Dynamics</h2>
-          <img class="r-stretch" src="figures/recruitment.svg" />
-          <p class="small-text center-text">Time-lapse analysis of p53-GFP recruitment to DNA damaged region</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; align-items: flex-start;">
+            
+            <!-- Video -->
+            <video controls style="flex: 1 1 33%; max-width: 33%; border: 1px solid #ccc; border-radius: 4px;">
+              <source src="figures/film2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- SVG Image -->
+            <img src="figures/recruitment.svg" alt="Recruitment plot" style="flex: 1 1 33%; max-width: 33%; border: 1px solid #ccc; border-radius: 4px;" />
+
+          </div>
+          <p class="small-text center-text">
+            Time-lapse analysis of p53-GFP recruitment to DNA damage site (video, left) with recruitment curve (right).
+          </p>
         </section>
+
         <section>
           <h2>Cell Density Evolution</h2>
           <img class="r-stretch" src="figures/Cell1IRDensityevolution.svg" />
@@ -475,6 +489,7 @@
         </section>
       </section>
 
+
       <!-- C. Theory -->
       <section>
         <section>
@@ -483,9 +498,10 @@
         <section>
           <h3>Diffusion Model</h3>
           <p>\[
-            \text{MSD}(\tau) = 4 D \tau^\alpha
+            \text{MSD}(\tau) = 4 n D \tau^\alpha
           \]</p>
           <ul>
+            <li><span class="highlight">n</span> dimensions</li>
             <li><span class="highlight">D:</span> Diffusion coefficient</li>
             <li><span class="highlight">α:</span> Diffusion type (sub-/normal/super-)</li>
           </ul>
@@ -541,7 +557,7 @@
         <section>
           <h2>Mean Diffusive Residence Time</h2>
           <img class="r-stretch" src="figures/tauDiff.svg" />
-          <p class="small-text center-text">Mean residence time if one only account for diffusions</p>
+          <p class="small-text center-text">Mean residence time if one only accounts for diffusions</p>
         </section>
       </section>
 
