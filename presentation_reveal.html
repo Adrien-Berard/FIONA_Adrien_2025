@@ -12,51 +12,52 @@
   <!-- Math plugin for equations -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.js"></script>
 
-  <!-- Custom CSS -->
   <style>
     .reveal .slides section {
       font-family: Computer Modern;
       line-height: 1.6;
-      padding: 40px;
+      padding: 10px;
       text-align: left;
       font-size: calc(20px + 0.5vw);
+      margin: 10px;
     }
     .reveal h1 {
       font-size: calc(36px + 1vw);
       text-align: center;
       color: #007ACC;
-      margin-bottom: 30px;
+      margin: 10px;
     }
     .reveal h2 {
       font-size: calc(28px + 0.8vw);
       text-align: center;
       color: #007ACC;
-      margin-bottom: 25px;
+      margin: 10px;
     }
     .reveal h3 {
       font-size: calc(24px + 0.6vw);
       text-align: center;
       color: #007ACC;
-      margin-bottom: 20px;
+      margin: 10px;
     }
     .highlight {
       color: #D9534F;
       font-weight: bold;
       font-size: 1.1em;
+      margin: 10px;
     }
     ul { 
-      margin-left: 2em;
+      margin: 10px;
       font-size: calc(18px + 0.4vw);
     }
     ul li {
-      margin-bottom: 8px;
+      margin: 10px;
     }
     img, svg {
       max-width: 95%;
       width: 95%;
       height: auto;
       display: block;
-      margin: 30px auto;
+      margin: 10px auto;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
@@ -64,26 +65,28 @@
       max-width: 90%;
       width: 90%;
       max-height: 75vh;
+      margin: 10px auto;
     }
     .center-text { 
       text-align: center;
       font-size: calc(18px + 0.4vw);
+      margin: 10px;
     }
     .small-text { 
       font-size: calc(14px + 0.3vw); 
       color: #555; 
-      margin-top: 15px;
+      margin: 10px;
     }
-    /* Math equations larger */
     .reveal .MathJax {
       font-size: 1.3em !important;
     }
-    /* Video sizing */
     video {
       max-width: 45% !important;
       width: 45% !important;
+      margin: 10px auto !important;
     }
   </style>
+
 </head>
 <body>
   <div class="reveal">
@@ -104,24 +107,51 @@
       <section>
         <h2>Outline</h2>
         <ul>
-          <li>A – Introduction</li>
-          <li>B – Results</li>
-          <li>C – Theory</li>
-          <li>D – Conclusions & Take‑aways</li>
+          <li class="fragment">
+            <a href="#/2" style="color: #007ACC; text-decoration: underline;">A – Introduction</a>
+            <ul>
+              <li class="fragment">A1 – Condensates & Phase Separation</li>
+              <li class="fragment">A2 – DNA Repair Foci Components</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <a href="#/3" style="color: #007ACC; text-decoration: underline;">B – Results</a>
+            <ul>
+              <li class="fragment">B1 – Macroscopic/full nucleus scale: Recruitment Dynamics</li>
+              <li class="fragment">B2 – Mesoscopic/condensate scale</li>
+              <li class="fragment">B3 – Microscopic scale: Single Particle Tracking (SPT)</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <a href="#/4" style="color: #007ACC; text-decoration: underline;">C – Theory</a>
+            <ul>
+              <li class="fragment">C1 – MSD & Diffusion Models</li>
+              <li class="fragment">C2 – Condensates driving forces</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <a href="#/5" style="color: #007ACC; text-decoration: underline;">D – Conclusions & Take‑aways</a>
+          </li>
         </ul>
       </section>
+
+
 
       <!-- A. Introduction -->
       <section>
         <section>
           <h2>A. Introduction</h2>
+          <img class="r-stretch" src="figures/humans_correct-2.svg" alt="Condensates illustration" />
           <ul>
             <li><span class="highlight">Condensates:</span> Membraneless organelles formed via phase separation</li>
-            <li><span class="highlight">DNA repair foci:</span> Concentrated protein domains repairing DNA damages</li>
-            <li><span class="highlight">Key proteins:</span> p53, 53BP1, FUS, PARP1</li>
+            <li><span class="highlight">DNA repair foci:</span> Concentrated protein domains repairing DNA damages with p53, 53BP1, FUS, PARP1,...</li>
             <li>Role: Organize and enhance repair machinery</li>
+            <p class="center-text small-text">
+          Illustration by Olga Markova.
+        </p>
           </ul>
         </section>
+
 
         <section>
           <h2>A. Introduction – Dynamics & Imaging</h2>
@@ -139,26 +169,33 @@
           <img class="r-stretch" src="figures/sptPALM(1).jpg" />
           <p class="small-text center-text">Single particle tracking setup from Manley et al. 2008</p>
         </section>
+
+         <section>
+          <h2>SPT Methodology</h2>
+          <img class="r-stretch" src="figures/sptPALM(1).jpg" />
+          <p class="small-text center-text">Single particle tracking setup from Manley et al. 2008</p>
+        </section>
       </section>
 
       <!-- B. Results -->
       <section>
         <section>
-          <h2>B. Results – Mobility Patterns</h2>
+          <h2>B. Results – Different spatio-temporal resolutions</h2>
           <ul>
-            <li><span class="highlight">Heterogeneous mobility:</span> Multiple diffusion modes</li>
-            <li><span class="highlight">Lower mobility inside condensates:</span> Due to transient interactions with scaffold DNA</li>
-            <li><span class="highlight">Evolution over time:</span> Phase transition, ripening & fission/fusion events</li>
+            <li><span class="highlight">Macroscopic:</span> Recruitment curve for kinetics</li>
+            <li><span class="highlight">Mesoscopic:</span> Condensates density map</li>
+            <li><span class="highlight">Microscopic:</span> Single Particle Tracking (SPT)</li>
           </ul>
         </section>
 
         <section>
           <h2>p53 GFP Recruitment Dynamics</h2>
           <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; align-items: flex-start;">
-            <video controls style="flex: 1 1 40%; max-width: 40%; border: 2px solid #ccc; border-radius: 6px;">
+            <video controls loop style="flex: 1 1 40%; max-width: 40%; border: 2px solid #ccc; border-radius: 6px;">
               <source src="figures/film2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+
             <img src="figures/recruitment.svg" alt="Recruitment plot" style="flex: 1 1 50%; max-width: 50%; border: 2px solid #ccc; border-radius: 6px;" />
           </div>
           <p class="small-text center-text">
@@ -194,7 +231,7 @@
         <section>
           <h3>Diffusion Model</h3>
           <p>\[
-            \text{MSD}(\tau) = 4 n D \tau^\alpha
+            \text{MSD}(\tau) = 2 n D \tau^\alpha
           \]</p>
           <ul>
             <li><span class="highlight">n:</span> dimensions</li>
@@ -253,7 +290,7 @@
         <section>
           <h2>Mean Diffusive Residence Time</h2>
           <img class="r-stretch" src="figures/tauDiff.svg" />
-          <p class="small-text center-text">Mean residence time if one only accounts for diffusions</p>
+          <p class="small-text center-text">Mean residence time if one only accounts for diffusion</p>
         </section>
       </section>
 
@@ -303,7 +340,7 @@
                   <span class="highlight">Higher density & reduced diffusion</span> inside condensates
                 </li>
                 <li class="conclusion-item">
-                  <span class="highlight">Attractive forces</span> inferred within condensates (~100 nm range)
+                  <span class="highlight">Attractive forces</span> inferred within condensates (~50 nm range)
                 </li>
                 <li class="conclusion-item">
                   <span class="highlight">Estimated thermodynamic parameters:</span> Gibbs free energy, residence time
@@ -356,7 +393,32 @@
                   <span class="highlight">Cross-disciplinary relevance:</span> pipeline transferable to other condensates
                 </li>
                 <li class="conclusion-item">
-                  <span class="highlight">Integrative framework:</span> simulation, theory, and experimental SPT
+                  <span class="highlight">Integrative framework:</span> simulation (PhD), theory, and experimental SPT
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Perspectives -->
+        <section data-auto-animate>
+          <h2 style="text-align: center; margin-bottom: 40px;">D. Conclusions & Take‑aways</h2>
+          <h3 style="text-align: center; color: #666; margin-bottom: 30px;">Deliverables and Perspectives</h3>
+          <div class="conclusions-container">
+            <div class="conclusion-category impact-category" onclick="animateCategory(this)">
+              <div class="category-header">
+                <div class="category-icon">🚀</div>
+                <span>Deliverables and Perspective</span>
+              </div>
+              <ul class="conclusion-list">
+                <li class="conclusion-item">
+                  <span class="highlight">Experimental deliverables:</span> RPE1 endogeneous tagged tested cell lines and p53-GFP plasmid
+                </li>
+                <li class="conclusion-item">
+                  <span class="highlight">Softwares produced:</span> All codes are freely accessible on GitHub Adrien-Berard
+                </li>
+                <li class="conclusion-item">
+                  <span class="highlight">Theoretical perspectives:</span> Active matter study, out-of-equilibrium thermodynamics, field theory on density
                 </li>
               </ul>
             </div>
@@ -367,6 +429,8 @@
       <!-- Thank You Slide -->
       <section>
         <h1 class="center-text">Thank You</h1>
+        
+        <p class="center-text small-text">And a huge thanks to Judith and the FIONA team!</p>
         <p class="center-text small-text">Questions?</p>
       </section>
 
