@@ -65,6 +65,7 @@
       max-width: 90%;
       width: 90%;
       max-height: 75vh;
+      display: block;
       margin: 10px auto;
     }
     .center-text { 
@@ -117,7 +118,7 @@
           <li class="fragment">
             <a href="#/3" style="color: #007ACC; text-decoration: underline;">B – Results</a>
             <ul>
-              <li class="fragment">B1 – Macroscopic/full nucleus scale: Recruitment Dynamics</li>
+              <li class="fragment">B1 – Macroscopic/full nucleus scale: Recruitment Dynamics in Human Cells</li>
               <li class="fragment">B2 – Mesoscopic/condensate scale</li>
               <li class="fragment">B3 – Microscopic scale: Single Particle Tracking (SPT)</li>
             </ul>
@@ -170,11 +171,6 @@
           <p class="small-text center-text">Single particle tracking setup from Manley et al. 2008</p>
         </section>
 
-         <section>
-          <h2>SPT Methodology</h2>
-          <img class="r-stretch" src="figures/sptPALM(1).jpg" />
-          <p class="small-text center-text">Single particle tracking setup from Manley et al. 2008</p>
-        </section>
       </section>
 
       <!-- B. Results -->
@@ -189,7 +185,7 @@
         </section>
 
         <section>
-          <h2>p53 GFP Recruitment Dynamics</h2>
+          <h2>Macro: p53 GFP Recruitment Dynamics</h2>
           <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; align-items: flex-start;">
             <video controls loop style="flex: 1 1 40%; max-width: 40%; border: 2px solid #ccc; border-radius: 6px;">
               <source src="figures/film2.mp4" type="video/mp4" />
@@ -204,7 +200,7 @@
         </section>
 
         <section>
-          <h2>Cell Density Evolution</h2>
+          <h2>Meso and micro: Cell Density Evolution</h2>
           <img class="r-stretch" src="figures/Cell1IRDensityevolution.svg" />
           <p class="small-text center-text">
             IR-induced p53 density changes in nucleus over time
@@ -230,14 +226,15 @@
 
         <section>
           <h3>Diffusion Model</h3>
-          <p>\[
-            \text{MSD}(\tau) = 2 n D \tau^\alpha
-          \]</p>
+
+          <img class="r-stretch" src="figures/MSD.svg"  />
+
           <ul>
             <li><span class="highlight">n:</span> dimensions</li>
             <li><span class="highlight">D:</span> Diffusion coefficient</li>
-            <li><span class="highlight">α:</span> Diffusion type (sub-/normal/super-)</li>
+            <li><span class="highlight">α:</span> Diffusion type (super-/normal/sub-)</li>
           </ul>
+          
         </section>
 
         <section>
@@ -260,13 +257,13 @@
         <section>
           <h2>Radial displacement analysis</h2>
           <img class="r-stretch" src="figures/dr_vs_r_inside_outside_53BP1.svg" />
-          <p class="small-text center-text">Radial displacement in function of the radius at the center of mass either in the condensate or outside. From 53BP1 data.</p>
+          <p class="small-text center-text">Radial displacement in function of the radius at the center of mass either in the condensate or outside. From 53BP1 data. Analysis idea from Miné-Hattab, Heltberg et al. 2021</p>
         </section>
 
         <section>
-          <h2>Effective Potential Analysis</h2>
-          <img class="r-stretch" src="figures/Ueff.svg" />
-          <p class="small-text center-text">Effective potential landscape within repair condensates</p>
+          <h2>Effective Force Analysis</h2>
+          <img class="r-stretch" src="figures/Feff.svg" />
+          <p class="small-text center-text">Effective force within repair condensates</p>
           <p class="center-text">
             $$
             \nabla U(\mathbf{r}) = -\mathbf{F}(\mathbf{r}) = \frac{f(\mathbf{r})}{\Delta t} \, \gamma = \frac{k_B T}{D} \frac{f(\mathbf{r})}{\Delta t}
@@ -460,6 +457,26 @@
           <p class="small-text center-text">Plasmid size confirmation via electrophoresis</p>
         </section>
 
+
+        <section>
+          <p class="center-text">
+          Data summary for Inside:
+          Total data points: 2975
+          r range: 0.00 to 0.42 μm
+          Δr range: -0.22 to 0.34 μm
+          Mean Δr: 0.000 ± 0.039 μm
+          Repelled motion (Δr > 0): 1518 points (51.0%)
+          Attracted motion (Δr < 0): 1453 points (48.8%)
+
+          Data summary for Outside:
+          Total data points: 63461
+          r range: 0.00 to 20.01 μm
+          Δr range: -0.49 to 0.49 μm
+          Mean Δr: 0.000 ± 0.042 μm
+          Repelled motion (Δr > 0): 8648 points (13.6%)
+          Attracted motion (Δr < 0): 8526 points (13.4%)</p>
+
+        </section>
       </section>
 
     </div>
@@ -476,6 +493,7 @@
       history: true,
       transition: 'slide',
       hash: true,
+      margin: 0.01,
       plugins: [ RevealMath.MathJax3 ]
     });
   </script>
